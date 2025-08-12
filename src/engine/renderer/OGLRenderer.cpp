@@ -34,7 +34,8 @@ bool OGLRenderer::SetupWindow(int width, int height, const char* title) {
 
     m_window = glfwCreateWindow(width, height, title, nullptr, nullptr);
     if (!m_window) {
-        std::cerr << "Failed to create window\n";
+        std::cerr << "Failed to create GLFW window\n";
+        std::cerr << "Error: " << glfwGetError(nullptr) << std::endl;
         glfwTerminate();
         return false;
     }

@@ -8,13 +8,27 @@ RendererInit::~RendererInit() {
     ShutdownRenderer();
 }
 
-bool RendererInit::InitializeRenderer(int width, int height, const char* title) {
+bool RendererInit::InitializeRenderer(int width, int height, const char* title, RendererType type) {
     if (m_isInitialized) {
         std::cout << "Renderer already initialized\n";
         return true;
     }
 
-    m_renderer = new OGLRenderer();
+    switch (type) {
+        case RendererType::OpenGL:
+            m_renderer = new OGLRenderer();
+            std::cout << "Creating OpenGL renderer...\n";
+            break;
+#ifdef _WIN32
+        case RendererType::DirectX9:
+            m_renderer = new DX9Renderer();
+            std::cout << "Creating DirectX9 renderer...\n";
+            break;
+#endif
+        default:
+            std::cerr << "Unknown renderer type\n";
+            return false;
+    }
     
     if (!m_renderer) {
         std::cerr << "Failed to create renderer instance\n";
