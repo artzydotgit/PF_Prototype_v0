@@ -71,3 +71,11 @@ void RendererInit::ShutdownRenderer() {
 bool RendererInit::IsRendererRunning() const {
     return m_isInitialized && m_renderer != nullptr;
 }
+
+void RendererInit::SetModel(const Model* model) {
+    if (m_isInitialized && m_renderer) {
+        if (OGLRenderer* oglRenderer = dynamic_cast<OGLRenderer*>(m_renderer)) {
+            oglRenderer->SetModel(model);
+        }
+    }
+}

@@ -29,4 +29,4 @@ THEN basic movement with a placeholder sprite
 
 # REQUIREMENTS
 
-glfw glm glad (included)
+glfw glm glad dxsdk (included)

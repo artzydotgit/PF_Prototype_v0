@@ -1,0 +1,24 @@
+{
+    "mapName": "Default",
+    "mapDescription": "The testing map for PF_Prototype_v0!",
+    "smallMap": "map.obj",
+    "bigMap": "map-big.obj",
+    "spawnPoints": {
+        "player1": {
+            "position": [0, 0, 0],
+            "rotation": [0, 0, 0]
+        },
+        "player2": {
+            "position": [0, 0, 0],
+            "rotation": [0, 0, 0]
+        },
+        "player3": {
+            "position": [0, 0, 0],
+            "rotation": [0, 0, 0]
+        },
+        "player4": {
+            "position": [0, 0, 0],
+            "rotation": [0, 0, 0]
+        }
+    }
+}

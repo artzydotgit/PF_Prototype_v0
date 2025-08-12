@@ -23,7 +23,8 @@ public:
     void StartRenderer();
     void ShutdownRenderer();
     bool IsRendererRunning() const;
-    Renderer* GetRenderer() { return m_renderer; }
+    Renderer* GetRenderer() { return m_renderer; }    
+    void SetModel(const Model* model);
 
 private:
     Renderer* m_renderer;
