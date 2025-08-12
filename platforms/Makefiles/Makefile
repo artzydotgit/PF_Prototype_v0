@@ -6,7 +6,7 @@ BUILD_DIR = ../../build
 OBJ_DIR = ../../obj
 EXTERNAL_DIR = ../../external
 
-SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+SOURCES = $(shell find $(SRC_DIR) -name "*.cpp")
 OBJECTS = $(SOURCES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 GLAD_SRC = $(EXTERNAL_DIR)/glad/glad.c
@@ -24,10 +24,14 @@ $(BUILD_DIR):
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
+$(OBJ_DIR)/%/.:
+	mkdir -p $@
+
 $(GLAD_OBJ): $(GLAD_SRC) | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -I$(EXTERNAL_DIR) -c $< -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -I$(EXTERNAL_DIR) -c $< -o $@
 
 $(TARGET): $(OBJECTS) $(GLAD_OBJ) | $(BUILD_DIR)
