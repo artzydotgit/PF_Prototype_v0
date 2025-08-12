@@ -30,9 +30,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\engine\renderer\DX9Renderer.cpp">
-      <Filter>Source Files\engine\renderer</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\engine\renderer\OGLRenderer.cpp">
       <Filter>Source Files\engine\renderer</Filter>
     </ClCompile>
@@ -47,6 +44,18 @@
     </ClCompile>
     <ClCompile Include="..\..\src\engine\backend\CommandArgs.cpp">
       <Filter>Source Files\engine\backend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\engine\renderer\ModelRenderer.cpp">
+      <Filter>Source Files\engine\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\engine\renderer\Shader.cpp">
+      <Filter>Source Files\engine\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\engine\backend\OBJLoader.cpp">
+      <Filter>Source Files\engine\backend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\engine\renderer\DX9Renderer.cpp">
+      <Filter>Source Files\engine\renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
