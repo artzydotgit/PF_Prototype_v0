@@ -2,6 +2,8 @@
 
 * An open source platformer fighter prototype
 
+* DX9 Support is a w.i.p. and is not my main priority
+
 # TODO:
 
 * Sprites and Anims
