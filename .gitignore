@@ -1,2 +1,5 @@
 build/
 obj/
+/platforms/VisualC/PF_Prototype_v0/x64
+/platforms/VisualC/.vs
+/platforms/VisualC/x64
