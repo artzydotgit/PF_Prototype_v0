@@ -57,5 +57,11 @@
     <ClCompile Include="..\..\src\engine\renderer\DX9Renderer.cpp">
       <Filter>Source Files\engine\renderer</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\engine\renderer\BackgroundRenderer.cpp">
+      <Filter>Source Files\engine\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\engine\Engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

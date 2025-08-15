@@ -73,9 +73,39 @@ bool RendererInit::IsRendererRunning() const {
 }
 
 void RendererInit::SetModel(const Model* model) {
-    if (m_isInitialized && m_renderer) {
+    if (m_renderer) {
         if (OGLRenderer* oglRenderer = dynamic_cast<OGLRenderer*>(m_renderer)) {
             oglRenderer->SetModel(model);
         }
+#ifdef _WIN32
+        else if (DX9Renderer* dxRenderer = dynamic_cast<DX9Renderer*>(m_renderer)) {
+            // errrr todo!
+        }
+#endif
     }
+}
+
+void RendererInit::SetBackgroundColor(const glm::vec4& color) {
+    if (m_renderer) {
+        if (OGLRenderer* oglRenderer = dynamic_cast<OGLRenderer*>(m_renderer)) {
+            oglRenderer->SetBackgroundColor(color);
+        }
+    }
+}
+
+void RendererInit::SetBackgroundGradient(const glm::vec4& topColor, const glm::vec4& bottomColor) {
+    if (m_renderer) {
+        if (OGLRenderer* oglRenderer = dynamic_cast<OGLRenderer*>(m_renderer)) {
+            oglRenderer->SetBackgroundGradient(topColor, bottomColor);
+        }
+    }
+}
+
+bool RendererInit::LoadBackgroundShader(const std::string& shaderName) {
+    if (m_renderer) {
+        if (OGLRenderer* oglRenderer = dynamic_cast<OGLRenderer*>(m_renderer)) {
+            return oglRenderer->LoadBackgroundShader(shaderName);
+        }
+    }
+    return false;
 }

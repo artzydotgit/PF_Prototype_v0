@@ -2,6 +2,8 @@
 
 #include "Renderer.h"
 #include "ModelRenderer.h"
+#include "../Engine.h"
+#include "BackgroundRenderer.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -21,6 +23,13 @@ public:
     int GetHeight() const override { return m_height; }
     
     void SetModel(const Model* model) { m_model = model; }
+    
+    void SetBackgroundColor(const glm::vec4& color);
+    void SetBackgroundGradient(const glm::vec4& topColor, const glm::vec4& bottomColor);
+    bool LoadBackgroundShader(const std::string& shaderName);
+    
+    void SetEngine(class Engine* engine) { m_engine = engine; }
+    void SetVSync(bool enabled);
 
 private:
     GLFWwindow* m_window;
@@ -28,6 +37,8 @@ private:
     int m_height;
     const Model* m_model;
     std::unique_ptr<ModelRenderer> m_modelRenderer;
+    std::unique_ptr<BackgroundRenderer> m_backgroundRenderer;
+    Engine* m_engine;
     
     glm::vec3 m_cameraPos;
     glm::vec3 m_cameraTarget;

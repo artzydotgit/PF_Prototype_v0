@@ -22,6 +22,8 @@
     <ClCompile Include="..\..\external\glad\glad.c" />
     <ClCompile Include="..\..\src\engine\backend\CommandArgs.cpp" />
     <ClCompile Include="..\..\src\engine\backend\OBJLoader.cpp" />
+    <ClCompile Include="..\..\src\engine\Engine.cpp" />
+    <ClCompile Include="..\..\src\engine\renderer\BackgroundRenderer.cpp" />
     <ClCompile Include="..\..\src\engine\renderer\DX9Renderer.cpp" />
     <ClCompile Include="..\..\src\engine\renderer\ModelRenderer.cpp" />
     <ClCompile Include="..\..\src\engine\renderer\OGLRenderer.cpp" />
