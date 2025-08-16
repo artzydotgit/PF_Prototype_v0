@@ -4,17 +4,10 @@
 #include "OGLRenderer.h"
 #include <glm/glm.hpp>
 
-#ifdef _WIN32
-#include "DX9Renderer.h"
-#endif
-
 class RendererInit {
 public:
     enum class RendererType {
         OpenGL
-#ifdef _WIN32
-        , DirectX9
-#endif
     };
 
     RendererInit();

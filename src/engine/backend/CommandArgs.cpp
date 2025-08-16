@@ -66,10 +66,5 @@ bool CommandArgs::IsRendererValid() const {
     if (renderer == "opengl") {
         return true;
     }
-#ifdef _WIN32
-    if (renderer == "dx9") {
-        return true;
-    }
-#endif
     return false;
 }

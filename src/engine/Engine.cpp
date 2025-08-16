@@ -264,11 +264,6 @@ bool Engine::InitializeRenderer() {
         case RendererType::OpenGL:
             rendererType = RendererInit::RendererType::OpenGL;
             break;
-#ifdef _WIN32
-        case RendererType::DirectX9:
-            rendererType = RendererInit::RendererType::DirectX9;
-            break;
-#endif
         default:
             rendererType = RendererInit::RendererType::OpenGL;
             break;

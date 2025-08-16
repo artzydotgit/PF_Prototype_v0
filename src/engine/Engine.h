@@ -13,9 +13,6 @@ class Engine {
 public:
     enum class RendererType {
         OpenGL,
-#ifdef _WIN32
-        DirectX9,
-#endif
         Auto
     };
 

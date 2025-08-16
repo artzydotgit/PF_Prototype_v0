@@ -19,12 +19,6 @@ bool RendererInit::InitializeRenderer(int width, int height, const char* title, 
             m_renderer = new OGLRenderer();
             std::cout << "Creating OpenGL renderer...\n";
             break;
-#ifdef _WIN32
-        case RendererType::DirectX9:
-            m_renderer = new DX9Renderer();
-            std::cout << "Creating DirectX9 renderer...\n";
-            break;
-#endif
         default:
             std::cerr << "Unknown renderer type\n";
             return false;
@@ -77,11 +71,6 @@ void RendererInit::SetModel(const Model* model) {
         if (OGLRenderer* oglRenderer = dynamic_cast<OGLRenderer*>(m_renderer)) {
             oglRenderer->SetModel(model);
         }
-#ifdef _WIN32
-        else if (DX9Renderer* dxRenderer = dynamic_cast<DX9Renderer*>(m_renderer)) {
-            // errrr todo!
-        }
-#endif
     }
 }
 

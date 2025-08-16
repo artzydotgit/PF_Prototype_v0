@@ -12,9 +12,6 @@ int main(int argc, char* argv[]) {
     if (!args.IsRendererValid()) {
         std::cerr << "Invalid renderer specified. Available options:" << std::endl;
         std::cerr << "  -renderer=opengl" << std::endl;
-#ifdef _WIN32
-        std::cerr << "  -renderer=dx9" << std::endl;
-#endif
         return -1;
     }
     
@@ -25,11 +22,6 @@ int main(int argc, char* argv[]) {
     if (rendererType == "opengl") {
         rendererEnum = Engine::RendererType::OpenGL;
     }
-#ifdef _WIN32
-    else if (rendererType == "dx9") {
-        rendererEnum = Engine::RendererType::DirectX9;
-    }
-#endif
     else {
         rendererEnum = Engine::RendererType::OpenGL;
     }
